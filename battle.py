@@ -118,8 +118,6 @@ class Battle:
         """Génère l'ennemi de la vague en fonction de la vague actuelle."""
         if self.wave < 10:
             self.enemy = Enemy(name="Goblin (lvl 1)", hp=100, attack=20, defense=5)  # Ennemi régulier
-            self.enemy = Enemy(name="Taoties (lvl 1)", hp=80, attack=20, defense=5)  # Ennemi régulier
-            self.enemy = Enemy(name="Troll (lvl 1)", hp=120, attack=20, defense=5)  # Ennemi régulier
         elif self.wave == 10:
             self.enemy = Boss(name="Daemon (BOSS)(lvl ???)", hp=500, attack=50, defense=10)  # Boss
         elif self.wave == 11:
