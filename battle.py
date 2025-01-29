@@ -114,15 +114,17 @@ class Battle:
                 self.turn = "player"  # L'ennemi passe son tour sans attaquer
         return True
 
-        def spawn_enemy(self):
+    def spawn_enemy(self):
         """Génère l'ennemi de la vague en fonction de la vague actuelle."""
-        if self.wave < 5:
+        if self.wave < 10:
             self.enemy = Enemy(name="Goblin (lvl 1)", hp=100, attack=20, defense=5)  # Ennemi régulier
-        elif self.wave == 5:
-            self.enemy = Boss(name="Troll (BOSS)(lvl ???)", hp=300, attack=50, defense=10)  # Boss
-        elif self.wave == 6:
-            self.enemy = FinalBoss(name="Dragon (FINAL BOSS)(lvl ???)", hp=500, attack=150, defense=100)  # Boss final
-            
+            self.enemy = Enemy(name="Taoties (lvl 1)", hp=80, attack=20, defense=5)  # Ennemi régulier
+            self.enemy = Enemy(name="Troll (lvl 1)", hp=120, attack=20, defense=5)  # Ennemi régulier
+        elif self.wave == 10:
+            self.enemy = Boss(name="Daemon (BOSS)(lvl ???)", hp=500, attack=50, defense=10)  # Boss
+        elif self.wave == 11:
+            self.enemy = FinalBoss(name="Ardyn Lucis Caelum (FINAL BOSS)(lvl ???)", hp=1000, attack=100, defense=50)  # Boss final
+
     def run_battle(self):
         """Démarre le combat avec les tours alternés et les vagues."""
         running = True
